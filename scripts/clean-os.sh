@@ -12,10 +12,10 @@ dpkg-reconfigure --frontend noninteractive tzdata
 /bin/systemctl stop $(/bin/systemctl list-unit-files | grep -i -E 'docker|container|podman' | grep -iv 'container-getty' | awk '{print $1}' | sort -V | uniq | paste -sd" ")
 
 # delete firefox
-apt autoremove --purge -y --allow-remove-essential $(dpkg -l | grep -i -E 'firefox|firebird|google-chrome-stable' | awk '{print $2}' | sort -V | uniq | paste -sd" ")
+#apt autoremove --purge -y --allow-remove-essential $(dpkg -l | grep -i -E 'firefox|firebird|google-chrome-stable' | awk '{print $2}' | sort -V | uniq | paste -sd" ")
 
 # delete microsoft
-apt autoremove --purge -y --allow-remove-essential $(dpkg -l | grep -i -E 'dotnet|microsoft|libmono|mono-|monodoc|powershell' | awk '{print $2}' | sort -V | uniq | paste -sd" ")
+#apt autoremove --purge -y --allow-remove-essential $(dpkg -l | grep -i -E 'dotnet|microsoft|libmono|mono-|monodoc|powershell' | awk '{print $2}' | sort -V | uniq | paste -sd" ")
 
 # delete docker
 apt autoremove --purge -y --allow-remove-essential $(dpkg -l | grep -i -E 'docker|container|moby' | awk '{print $2}' | sort -V | uniq | paste -sd" ")
@@ -30,7 +30,7 @@ apt autoremove --purge -y runc
 /bin/systemctl stop postgresql.service
 /bin/systemctl stop mysql.service
 /bin/systemctl stop mysqld.service
-apt autoremove --purge -y --allow-remove-essential $(dpkg -l | awk '$2 ~ /mysql|postgresql|google-cloud|mssql|msbuild|msodbcsql|^llvm-|^php[1-9]/ {print $2}' |  grep -iv libmysqlclient | sort -V | uniq | paste -sd" ")
+#apt autoremove --purge -y --allow-remove-essential $(dpkg -l | awk '$2 ~ /mysql|postgresql|google-cloud|mssql|msbuild|msodbcsql|^llvm-|^php[1-9]/ {print $2}' |  grep -iv libmysqlclient | sort -V | uniq | paste -sd" ")
 /bin/rm -fr /var/lib/postgresql /var/lib/mysql
 
 # delete snap
