@@ -21,12 +21,16 @@ echo
 find /tmp | grep -i dockerd
 echo
 echo
-/bin/ls -lah --color /
+echo ' pwd:'
+pwd
+echo
+/bin/ls -lah --color bundles
 echo
 echo ' ps -a:'
 docker ps -a
 echo
 echo ' images:'
 docker images
+echo
 echo
 exit
