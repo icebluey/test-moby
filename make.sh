@@ -26,7 +26,7 @@ echo
 echo ' ps -a:'
 docker ps -a
 echo
-echo ' images:‘
+echo ' images:'
 docker images
 echo
 exit
