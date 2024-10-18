@@ -26,11 +26,11 @@ pwd
 echo
 find bundles
 echo
-echo ' ps -a:'
-docker ps -a
+bundles/binary/dockerd --version
 echo
-echo ' images:'
-docker images
+file bundles/binary/dockerd
+echo
+ldd bundles/binary/dockerd
 echo
 echo
 exit
