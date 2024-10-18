@@ -24,7 +24,7 @@ echo
 echo ' pwd:'
 pwd
 echo
-/bin/ls -lah --color bundles
+find bundles
 echo
 echo ' ps -a:'
 docker ps -a
