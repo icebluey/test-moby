@@ -16,6 +16,9 @@ cd cli
 git checkout v26.1.5
 
 make dev
+echo
+echo ' make dev done'
+echo
 make -f docker.Makefile all
 echo
 echo
