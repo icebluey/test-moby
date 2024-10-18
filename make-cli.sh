@@ -14,6 +14,7 @@ cd "${_tmp_dir}"
 git clone https://github.com/docker/cli.git
 cd cli
 git checkout v26.1.5
+export VERSION='26.1.5'
 
 #make dev
 echo
