@@ -15,4 +15,9 @@ cd moby
 git checkout v26.1.5
 #make all
 make binary
+echo
+echo ' done '
+echo
+find /tmp/bundles
+echo
 exit
