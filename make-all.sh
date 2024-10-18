@@ -10,7 +10,7 @@ cd "${_tmp_dir}"
 #rm -vf v*.tar*
 #cd moby*
 
-https://github.com/moby/moby.git
+git clone https://github.com/moby/moby.git
 cd moby
 git checkout v26.1.5
 make all
