@@ -2,6 +2,7 @@
 export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 TZ='UTC'; export TZ
 umask 022
+set -e
 _tmp_dir="$(mktemp -d)"
 cd "${_tmp_dir}"
 #wget -c -t 9 -T 9 "https://github.com/moby/moby/archive/refs/tags/v23.0.15.tar.gz"
@@ -14,11 +15,11 @@ git clone https://github.com/docker/cli.git
 cd cli
 git checkout v26.1.5
 
-make all
-#make binary
+make dev
+make -f docker.Makefile all
 echo
 echo
-make plugins
+make -f docker.Makefile plugins
 echo
 echo ' done '
 echo
