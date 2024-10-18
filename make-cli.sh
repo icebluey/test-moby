@@ -15,7 +15,7 @@ git clone https://github.com/docker/cli.git
 cd cli
 git checkout v26.1.5
 
-make dev
+#make dev
 echo
 echo ' make dev done'
 echo
