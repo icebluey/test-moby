@@ -21,6 +21,8 @@ echo
 echo
 ls -la --color ./
 echo
+find ./ | grep -i docker-linux-amd64
+echo
 echo ' done '
 echo
 echo
