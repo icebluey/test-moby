@@ -18,6 +18,10 @@ make binary
 echo
 echo ' done '
 echo
-find /tmp/bundles
+find /tmp
 echo
+echo
+/bin/ls -lah --color /
+echo
+
 exit
