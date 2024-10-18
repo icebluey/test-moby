@@ -1,0 +1,26 @@
+name: Build
+on:
+  #push:
+  #  branches: [ "master" ]
+  #pull_request:
+  #  branches: [ "master" ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install docker
+        run: >
+          sudo apt update -y -qqq;
+          sudo apt autoremove --purge -y needrestart || true;
+          sudo apt install -y bash wget;
+          sudo ln -svf bash /bin/sh;
+          sudo /bin/bash scripts/clean-os.sh;
+          sudo apt upgrade -y -qqq;
+          sudo /bin/bash scripts/install-docker.sh
+
+      - name: Build curl ub2204
+        run: |
+          sudo /bin/bash make-all.sh
+
