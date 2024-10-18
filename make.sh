@@ -18,10 +18,15 @@ make binary
 echo
 echo ' done '
 echo
-find /tmp
+find /tmp | grep -i dockerd
 echo
 echo
 /bin/ls -lah --color /
 echo
-
+echo ' ps -a:'
+docker ps -a
+echo
+echo ' images:‘
+docker images
+echo
 exit
