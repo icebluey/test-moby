@@ -24,7 +24,7 @@ docker ps -a
 echo
 docker images
 echo
-make -f docker.Makefile all
+make -f docker.Makefile shell
 echo
 echo
 make -f docker.Makefile plugins
