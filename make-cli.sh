@@ -14,8 +14,8 @@ git clone https://github.com/docker/cli.git
 cd cli
 git checkout v26.1.5
 
-#make all
-make binary
+make all
+#make binary
 echo
 echo
 make plugins
