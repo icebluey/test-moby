@@ -40,7 +40,7 @@ apt autoremove --purge -y runc
 /bin/systemctl stop snapd.service
 /bin/systemctl stop snapd.socket
 /bin/systemctl stop snapd.seeded.service
-apt autoremove --purge lxd-agent-loader snapd
+#apt autoremove --purge lxd-agent-loader snapd
 /bin/rm -rf ~/snap
 /bin/rm -rf /snap
 /bin/rm -rf /var/snap
