@@ -19,6 +19,11 @@ make dev
 echo
 echo ' make dev done'
 echo
+echo
+docker ps -a
+echo
+docker images
+echo
 make -f docker.Makefile all
 echo
 echo
