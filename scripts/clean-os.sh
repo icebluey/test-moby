@@ -33,31 +33,7 @@ apt autoremove --purge -y runc
 #apt autoremove --purge -y --allow-remove-essential $(dpkg -l | awk '$2 ~ /mysql|postgresql|google-cloud|mssql|msbuild|msodbcsql|^llvm-|^php[1-9]/ {print $2}' |  grep -iv libmysqlclient | sort -V | uniq | paste -sd" ")
 /bin/rm -fr /var/lib/postgresql /var/lib/mysql
 
-# delete snap
-snap remove --purge lxd
-snap remove --purge $(snap list | awk 'NR > 1 && $1 !~ /lxd/ && $1 !~ /snapd/ {print $1}' | sort -V | uniq | paste -sd" ")
-snap remove --purge lxd
-snap remove --purge snapd
-_services=(
-'snapd.socket'
-'snapd.service'
-'snapd.apparmor.service'
-'snapd.autoimport.service'
-'snapd.core-fixup.service'
-'snapd.failure.service'
-'snapd.recovery-chooser-trigger.service'
-'snapd.seeded.service'
-'snapd.snap-repair.service'
-'snapd.snap-repair.timer'
-'snapd.system-shutdown.service'
-)
-for _service in ${_services[@]}; do
-    systemctl stop ${_service} >/dev/null 2>&1
-done
-sleep 3
-for _service in ${_services[@]}; do
-    systemctl disable ${_service} >/dev/null 2>&1
-done
+
 /bin/systemctl disable snapd.service
 /bin/systemctl disable snapd.socket
 /bin/systemctl disable snapd.seeded.service
