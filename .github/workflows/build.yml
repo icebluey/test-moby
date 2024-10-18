@@ -22,5 +22,5 @@ jobs:
 
       - name: Build moby
         run: |
-          sudo /bin/bash make-all.sh
+          sudo /bin/bash make.sh
 
