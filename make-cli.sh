@@ -16,7 +16,8 @@ cd cli
 git checkout v26.1.5
 export VERSION='26.1.5'
 
-#make dev
+sed 's|$(DOCKER_RUN) -it|$(DOCKER_RUN) -i|g' -i docker.Makefile
+make dev
 echo
 echo ' make dev done'
 echo
@@ -25,7 +26,7 @@ docker ps -a
 echo
 docker images
 echo
-make -f docker.Makefile shell
+make -f docker.Makefile all
 echo
 echo
 make -f docker.Makefile plugins
